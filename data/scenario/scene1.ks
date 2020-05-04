@@ -7,7 +7,7 @@
 [start_keyconfig]
 
 
-[bg storage="room.jpg" time="100"]
+[bg storage="NIC5F.jpg" time="100"]
 
 ;メニューボタンの表示
 @showmenubutton
@@ -43,10 +43,10 @@
 
 
 #
-BGMを流しますか？[l][cm]
+BGMを流しますか？[p]
 
-[link target=*playmusic]【１】うん。再生してください[endlink][r]
-[link target=*noplay]【２】いや。今は再生しないで！[endlink]
+[glink  color="blue"  storage="scene1.ks"  size="20"  x="260"  width="400"  y="100"  text="再生する"  target="*playmusic"  ]
+[glink  color="pink"  storage="scene1.ks"  size="20"  x="260"  width="400"  y="170"  text="再生しない"  target="*noplay"  ]
 [s]
 
 *playmusic
@@ -170,16 +170,16 @@ AppStoreやGooglePlayに向けてアプリ化して販売することもでき�
 
 #あかね
 じゃあ、次に場面を移動してみるね[p]
-廊下に移動するよ[p]
-[bg  time="3000"  method="crossfade" storage="rouka.jpg"  ]
+外に移動するよ[p]
+[bg  time="3000"  method="crossfade" storage="NIC.png"  ]
 
 #
-お、廊下に移動したね。[p]
+お、外に移動したね。[p]
 
 #あかね
 寒いよぉ〜。はやく教室に戻ろう。[p]
 
-[bg  time="1000" method="slide"  storage="room.jpg" ]
+[bg  time="1000" method="slide"  storage="NIC5F.jpg" ]
 #
 あれ、今、場面の移動がちょっと違ったね。[p]
 #あかね
@@ -362,8 +362,8 @@ AppStoreやGooglePlayに向けてアプリ化して販売することもでき�
 
 *button_link
 
-@layopt layer=message0 visible=false
-@layopt layer=fix visible=false
+;@layopt layer=message0 visible=false
+;@layopt layer=fix visible=false
 [anim name="akane" left=600 time=1000]
 
 ;リンクボタンを表示
