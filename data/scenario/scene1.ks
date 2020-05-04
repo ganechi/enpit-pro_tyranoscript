@@ -41,6 +41,30 @@
 ;yamato
 [chara_new  name="yamato"  storage="chara/yamato/normal.png" jname="やまと" ]
 
+
+#
+BGMを流しますか？[l][cm]
+
+[link target=*playmusic]【１】うん。再生してください[endlink][r]
+[link target=*noplay]【２】いや。今は再生しないで！[endlink]
+[s]
+
+*playmusic
+
+[cm]
+よし、再生するよ。[l]
+@playbgm time="3000" storage=music.ogg loop=true
+徐々にフェードインしながら再生することもできるんだ[l][cm]
+
+@jump target="*common_bgm"
+
+*noplay
+[cm]
+うん。わかった。再生はしないね。[l][cm]
+また、試してみてね[l][cm]
+
+*common_bgm
+
 #
 ふぁあああ〜〜〜さて、ゲームが簡単に作れるというから、来てみたものの[p]
 
@@ -297,30 +321,6 @@ AppStoreやGooglePlayに向けてアプリ化して販売することもでき�
 #
 大丈夫？[p]
 これだけあれば、ゲームを作るには困らなそうだね[p]
-
-#あかね
-さて、もちろん音楽を鳴らすこともできるよ[l][cm]
-それじゃあ、再生するよ？[l][cm]
-
-[link target=*playmusic]【１】うん。再生してください[endlink][r]
-[link target=*noplay]【２】いや。今は再生しないで！[endlink]
-[s]
-
-*playmusic
-
-[cm]
-よし、再生するよ。[l]
-@playbgm time="3000" storage=music.ogg loop=true
-徐々にフェードインしながら再生することもできるんだ[l][cm]
-
-@jump target="*common_bgm"
-
-*noplay
-[cm]
-うん。わかった。再生はしないね。[l][cm]
-また、試してみてね[l][cm]
-
-*common_bgm
 
 あ、そうそう[l][cm]
 今みたいな選択肢で物語を分岐することも、簡単にできるよ。[l][cm]
