@@ -19,12 +19,12 @@
         return str.substring(0, i + 1);
 
     };
-    
+
     $.getDirPath = function(str){
-        
+
         var i = str.lastIndexOf('/');
         return str.substring(0, i + 1);
-        
+
     };
 
     $.isHTTP = function(str) {
@@ -42,7 +42,7 @@
     };
 
     $.localFilePath = function(){
-        
+
         var path = "";
         //Mac os Sierra 対応
         if(process.execPath.indexOf("var/folders")!=-1){
@@ -50,9 +50,9 @@
         }else{
             path = $.getProcessPath();
         }
-        
+
         return path;
-        
+
     };
 
     $.getViewPort = function() {
@@ -249,7 +249,7 @@
         return "";
 
     };
-    
+
     $.convertItalic = function(flag) {
 
         if (flag == "true") {
@@ -283,10 +283,10 @@
     };
 
     $.loadText = function(file_path, callback) {
-        
+
         /*
         var httpObj = jQuery.get(file_path + "?" + Math.floor(Math.random() * 1000000), null, function(obj) {
-            
+
             var order_str = "";
 
             if (httpObj) {
@@ -306,9 +306,9 @@
             callback(order_str);
             // createOrder
         });
-        
+
         */
-        
+
         $.ajax({
             url: file_path + "?" + Math.floor(Math.random() * 1000000),
             cache: false,
@@ -321,8 +321,8 @@
                 callback("");
             }
         });
-        
-        
+
+
 
     };
 
@@ -372,7 +372,7 @@
         }
 
     };
-    
+
     $.isTyranoPlayer = function(){
         if(typeof _tyrano_player != "undefined"){
             return true;
@@ -380,7 +380,7 @@
             return false;
         }
     };
-    
+
     $.lang = function(key) {
 
         if (tyrano_lang["word"][key]) {
@@ -405,11 +405,11 @@
     $.getBrowser = function() {
 
         var userAgent = window.navigator.userAgent.toLowerCase();
-        
+
         if (userAgent.indexOf('msie') >= 0 || userAgent.indexOf('trident') >= 0) {
             return "msie";
         }else if (userAgent.indexOf("edge") > -1) {
-            return "edge"; 
+            return "edge";
         }else if (userAgent.indexOf("firefox") > -1) {
             return "firefox";
         } else if (userAgent.indexOf("opera") > -1) {
@@ -425,7 +425,7 @@
         }
 
     };
-    
+
     $.isNWJS = function(){
         // Node.js で動作しているか
         var isNode = (typeof process !== "undefined" && typeof require !== "undefined");
@@ -438,7 +438,7 @@
         } catch(e) {
             isNodeWebkit = false;
         }
-        
+
         if (isNodeWebkit) {
             // node-webkitで動作
             return true;
@@ -450,36 +450,36 @@
             return false;
         }
     },
-    
+
     //オブジェクトを引き継ぐ。
     $.extendParam = function(pm,target){
-        
+
         var tmp = target;
-        
+
         for(key in target){
-            
+
             if(pm[key]){
                 if(pm[key]!=""){
                     target[key] = pm[key];
                 }
             }
-            
+
         }
-        
+
         return target;
-        
+
     };
 
-    
+
     $.insertRule = function(css_str){
-        
+
         var sheet = (function() {
             var style = document.createElement("style");
             document.getElementsByTagName("head")[0].appendChild(style);
             return style.sheet;
         })();
         sheet.insertRule(css_str,0);
-        
+
     },
 
     $.swfName = function(str) {
@@ -547,7 +547,7 @@
         }
 
     };
-    
+
     //コンバート v450rc5以前
     var _map_conv_method = {
         "corssfade":"fadeIn",
@@ -565,15 +565,15 @@
     }
 
     $.trans = function(method, j_obj, time, mode, callback) {
-        
+
         if(method=="crossfade") {
             method = "fadeIn";
         }else if(_map_conv_method[method]){
             method = _map_conv_method[method];
         }
-        
+
         j_obj.css("animation-duration",parseInt(time)+"ms");
-        
+
         if (mode == "hide") {
             j_obj.show();
             method = $.replaceAll(method,"In","Out");
@@ -600,7 +600,7 @@
             });
         }
 
-        
+
 
     };
 
@@ -616,50 +616,50 @@
         return obj;
 
     };
-    
+
     $.preloadImgCallback = function(j_menu,cb,that){
-    
+
         var img_storage = [];
-        
+
         j_menu.find("img").each(function() {
             img_storage.push($(this).attr("src"));
         });
-        
+
         //ロードが全て完了したら、ふわっと出す
         var sum = 0;
         for (var i = 0; i < img_storage.length; i++) {
             that.kag.preload(img_storage[i], function() {
                 sum++;
                 if (img_storage.length == sum) {
-                    
+
                     cb();
-        
+
                 }
             });
         }
-        
+
         if(img_storage.length==0){
             cb();
         }
-    
+
     };
-    
+
     $.setStorage = function(key, val ,type) {
-        
+
         if(type=="webstorage_compress"){
-            
+
             $.setStorageCompress(key,val);
-            
+
         }else if(type=="file"){
-            
+
             $.setStorageFile(key,val);
-            
+
         }else{
             $.setStorageWeb(key,val);
         }
-        
+
     };
-    
+
     //PC版のみ。実行フォルダを取得
     $.getProcessPath = function(){
         var path = process.execPath;
@@ -676,16 +676,16 @@
         }else{
             path_index = tmp_path.lastIndexOf("\\");
         }
-        
+
         var out_path = path.substr(0,path_index);
         return out_path;
-        
+
     };
-    
+
     $.getOS = function(){
-        
+
         if($.isNWJS()){
-        
+
             var path = process.execPath;
             var tmp_index = path.indexOf(".app");
             var os = "mac";
@@ -693,30 +693,30 @@
                 tmp_index = path.indexOf(".exe");
                 os="win";
             }
-            
+
             return os;
-            
+
         }else{
             return "";
         }
     };
-    
+
     $.getStorage = function(key,type) {
-        
+
         var gv = "null";
-        
+
         if(type=="webstorage_compress"){
-            
+
             gv = $.getStorageCompress(key);
-            
+
         }else if(type=="file"){
             gv = $.getStorageFile(key);
         }else{
             gv = $.getStorageWeb(key);
         }
-        
+
         return gv;
-        
+
     };
 
     $.setStorageWeb = function(key, val) {
@@ -747,15 +747,15 @@
         return gv;
 
     };
-    
+
     $.playerHtmlPath = function(html){
-     
+
         if ("appJsInterface" in window) {
             //Android
         } else {
-            
+
             if(typeof TyranoPlayer == "function"){
-            
+
                 //playerの場合HTMLを修正する必要がある
                 var result_html ="";
                 while(1){
@@ -764,37 +764,37 @@
                         result_html += html;
                         break;
                     }else{
-                        
+
                         result_html += html.substring(0,index);
                         html = html.substring(index,html.length);
-                        
+
                         var replace_index = html.indexOf("/game/data");
                         tmp_html = html.substring(replace_index + "/game/data".length,html.length);
                         html = "./data"+tmp_html;
-                        
-                        
+
+
                     }
-                    
+
                 }
-                
+
                 if(result_html !=""){
                     html = result_html;
                 }
-                
+
             }
-            
-            
+
+
         }
-        
+
         return html;
-        
+
     };
-    
-    
+
+
     $.confirmSaveClear = function(){
         if(confirm('セーブデータが壊れている可能性があります。セーブデータを初期化しますか？')){
            alert("初期化");
-           localStorage.clear(); 
+           localStorage.clear();
         }
     };
 
@@ -833,9 +833,9 @@
     $.setStorageFile = function(key, val) {
         val = JSON.stringify(val);
         var fs = require('fs');
-        
+
         var out_path = "";
-        
+
         //mac os Sierra 対応
         if(process.execPath.indexOf("var/folders")!=-1){
             out_path = process.env.HOME+"/_TyranoGameData";
@@ -845,8 +845,8 @@
         }else{
             out_path = $.getProcessPath();
         }
-        
-        
+
+
         fs.writeFileSync(out_path + "/" + key + ".sav", escape(val));
 
     };
@@ -858,7 +858,7 @@
             var gv = "null";
             var fs = require('fs');
             var out_path = "";
-        
+
             //Mac os Sierra 対応
             if(process.execPath.indexOf("var/folders")!=-1){
                 out_path = process.env.HOME+"/_TyranoGameData";
@@ -868,7 +868,7 @@
             }else{
                 out_path = $.getProcessPath();
             }
-            
+
             if (fs.existsSync(out_path+"/" + key + ".sav")) {
                 var str = fs.readFileSync(out_path+"/" + key + ".sav");
                 gv = unescape(str);
@@ -922,32 +922,32 @@
     */
 
     $.alert = function(str,cb) {
-        
+
         $(".remodal_title").html(str);
-        
+
         $(".remodal").find(".remodal-cancel").hide();
         $(".remodal").find(".remodal-confirm").show();
-        
+
         var inst = $('[data-remodal-id=modal]').remodal();
         inst.open();
-        
-        $(document).off('closed', '.remodal');        
+
+        $(document).off('closed', '.remodal');
         $(document).on('closed', '.remodal', function (e) {
-            
+
             if(typeof cb == "function"){
                 cb();
             }
-            
+
         });
-        
-        
+
+
         /*
         if ($.userenv() != "pc") {
             alert(str);
             if(typeof cb == "function"){
                 cb();
             }
-            
+
         }else{
             alertify.alert(str,function(){;
                 if(typeof cb == "function"){
@@ -956,61 +956,61 @@
             });
         }
         */
-        
+
     };
-    
+
     $.inform =function(str,type){
         alertify.log(str,type);
     };
-    
+
     $.confirm = function (str,cb_ok,cb_cancel){
-        
+
         $(".remodal_title").html(str);
-        
+
         $(".remodal").find(".remodal-cancel").show();
         $(".remodal").find(".remodal-confirm").show();
-        
+
         var inst = $('[data-remodal-id=modal]').remodal();
         inst.open();
-        
+
         /////////OK /////////////
-        
-        $(document).off('closed', '.remodal');        
-        
-        $(document).off('confirmation', '.remodal');        
+
+        $(document).off('closed', '.remodal');
+
+        $(document).off('confirmation', '.remodal');
         $(document).on('confirmation', '.remodal', function (e) {
-            
-            $(document).off('confirmation', '.remodal');        
-            $(document).off('cancellation', '.remodal');        
-            
+
+            $(document).off('confirmation', '.remodal');
+            $(document).off('cancellation', '.remodal');
+
             if(typeof cb_ok == "function"){
                 cb_ok();
             }
-            
+
         });
-        
+
         ///////キャンセル//////////////
-        $(document).off('cancellation', '.remodal');        
+        $(document).off('cancellation', '.remodal');
         $(document).on('cancellation', '.remodal', function (e) {
-            
-            $(document).off('confirmation', '.remodal');        
-            $(document).off('cancellation', '.remodal');        
-            
+
+            $(document).off('confirmation', '.remodal');
+            $(document).off('cancellation', '.remodal');
+
             if(typeof cb_cancel == "function"){
                 cb_cancel();
             }
-            
+
         });
-        
+
         /*
         if ($.userenv() != "pc") {
-            
+
             if(window.confirm(str)){
                 cb_ok();
         	}else{
         		cb_cancel();
         	}
-            
+
         }else{
             alertify.confirm(str,function(e){
                 if (e) {
@@ -1021,9 +1021,9 @@
                     cb_cancel();
                 }
             });
-        }       
-        */     
-                
+        }
+        */
+
     };
 
     //オブジェクトの個数をもってきます。1
@@ -1326,4 +1326,3 @@ jQuery.extend(jQuery.easing, {
         return jQuery.easing.easeOutBounce(x, t * 2 - d, 0, c, d) * .5 + c * .5 + b;
     }
 });
-
