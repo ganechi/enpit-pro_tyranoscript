@@ -10,6 +10,8 @@
 @call storage="tyrano.ks"
 
 ;ゲームで必ず必要な初期化処理はこのファイルに記述するのがオススメ
+;プラグインのテーマを反映
+[plugin name="theme_tyrano_02" ]
 
 ;メッセージボックスは非表示
 @layopt layer="message" visible=false
@@ -21,5 +23,3 @@
 @jump storage="title.ks"
 
 [s]
-
-

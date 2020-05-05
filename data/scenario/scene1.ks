@@ -13,17 +13,17 @@
 @showmenubutton
 
 ;メッセージウィンドウの設定
-[position layer="message0" left=20 top=400 width=920 height=200 page=fore visible=true]
+;[position layer="message0" left=20 top=400 width=920 height=200 page=fore visible=true]
 
 ;文字が表示される領域を調整
-[position layer=message0 page=fore margint="45" marginl="50" marginr="70" marginb="60"]
+;[position layer=message0 page=fore margint="45" marginl="50" marginr="70" marginb="60"]
 
 
 ;メッセージウィンドウの表示
 @layopt layer=message0 visible=true
 
 ;キャラクターの名前が表示される文字領域
-[ptext name="chara_name_area" layer="message0" color="white" size=24 x=50 y=410]
+;[ptext name="chara_name_area" layer="message0" color="white" size=24 x=50 y=410]
 
 ;上記で定義した領域がキャラクターの名前表示であることを宣言（これがないと#の部分でエラーになります）
 [chara_config ptext="chara_name_area"]
@@ -47,8 +47,8 @@
 #
 BGMを流しますか？[p]
 
-[glink  color="blue"  storage="scene1.ks"  size="20"  x="260"  width="400"  y="100"  text="再生する"  target="*playmusic"  ]
-[glink  color="pink"  storage="scene1.ks"  size="20"  x="260"  width="400"  y="170"  text="再生しない"  target="*noplay"  ]
+[glink  color="theme_tyrano_02"  storage="scene1.ks"  size="20"  x="260"  width="400"  y="100"  text="再生する"  target="*playmusic"  ]
+[glink  color="theme_tyrano_02"  storage="scene1.ks"  size="20"  x="260"  width="400"  y="170"  text="再生しない"  target="*noplay"  ]
 [s]
 
 *playmusic
@@ -90,9 +90,9 @@ BGMを流しますか？[p]
 #あかね
 もしかして、ノベルゲームの開発に興味があるの？[p]
 
-[glink  color="blue"  storage="scene1.ks"  size="20"  x="260"  width="400"  y="100"  text="はい。興味あります"  target="*selectinterest"  ]
-[glink  color="blue"  storage="scene1.ks"  size="20"  x="260"  width="400"  y="170"  text="興味あります！"  target="*selectinterest"  ]
-[glink  color="blue"  storage="scene1.ks"  size="20"  x="260"  width="400"  y="240"  text="どちらかと言うと興味あり"  target="*selectinterest"  ]
+[glink  color="theme_tyrano_02"  storage="scene1.ks"  size="20"  x="260"  width="400"  y="100"  text="はい。興味あります"  target="*selectinterest"  ]
+[glink  color="theme_tyrano_02"  storage="scene1.ks"  size="20"  x="260"  width="400"  y="170"  text="興味あります！"  target="*selectinterest"  ]
+[glink  color="theme_tyrano_02"  storage="scene1.ks"  size="20"  x="260"  width="400"  y="240"  text="どちらかと言うと興味あり"  target="*selectinterest"  ]
 [s  ]
 *selectinterest
 
@@ -196,16 +196,6 @@ AppStoreやGooglePlayに向けてアプリ化して販売することもでき�
 ティラノスクリプトでは、今みたいなアドベンチャーゲームの他に[r]
 ビジュアルノベルのような全画面表示のゲームもつくれるよ。[p]
 
-#
-
-;キャラクター非表示
-[chara_hide name="akane"]
-
-
-;メッセージを全画面に切り替え
-[position layer="message0" left=20 top=40 width=920 height=560 page=fore visible=true ]
-
-どうかな? 物語をじっくり読ませたい場合はこの方式が便利ですね[l][r]
 ティラノスクリプトは非常に強力で、柔軟な表現が可能です。[l][cm]
 
 [font size=40]文字のサイズを変更したり
@@ -217,43 +207,7 @@ AppStoreやGooglePlayに向けてアプリ化して販売することもでき�
 [ruby text=る]ル[ruby text=び]ビを[ruby text=ふ]振ることだって[ruby text=かん]簡[ruby text=たん]単にできます[l]
 [cm]
 
-;たて書きにする
-[position vertical=true layer=message0 page=fore margint="45" marginl="0" marginr="70" marginb="60"]
-
-このように縦書きで記述することもできます。[r][l]
-縦書きでも、横書きの時と同じ機能を使うことができます。[r][l]
-
-;横書きに戻す
-[position vertical=false]
-
-横書きと縦書きをシーンによって使い分けることもできます[r][l]
-じゃあ、アドベンチャー形式に戻しますね[p]
-
-;メッセージボックスを元に戻す
-[position layer="message0" left=20 top=400 width=920 height=200 page=fore visible=true]
-
-@chara_show name="akane"
-
 #akane
-メッセージボックスは、自分の好きな画像を使うこともできるよ[p]
-
-
-
-[font color="0x454D51"]
-[deffont color="0x454D51"]
-
-;名前の表示位置も変更
-[free name="chara_name_area" layer="message0"]
-
-[position layer=message0 width=960 height=210 top=430 left=0]
-[position layer=message0 page=fore frame="frame.png" margint="45" marginl="50" marginr="70" marginb="60" opacity=230 ]
-
-
-;名前枠の設定
-[ptext name="chara_name_area" layer="message0"  color="0xFAFAFA"  size=24 x=40 y=435]
-[chara_config ptext="chara_name_area"]
-
-どうかな？[p]
 ゲームに合わせて自分の好きなデザインを作ってくださいね[p]
 
 あと、デフォルトだとセーブやロードは画面右下のボタンからできるけど[p]
@@ -263,44 +217,7 @@ AppStoreやGooglePlayに向けてアプリ化して販売することもでき�
 @hidemenubutton
 
 ;ロールボタン追加;;;;;;;;;;;;;;
-
-[button name="role_button" role="skip" graphic="button/skip.png" enterimg="button/skip2.png" x=35 y=610]
-
-;	オート
-[button name="role_button" role="auto" graphic="button/auto.png" enterimg="button/auto2.png" x=110 y=610]
-
-;	セーブ
-[button name="role_button" role="save" graphic="button/save.png" enterimg="button/save2.png" x=185 y=610]
-
-;ロード
-[button name="role_button" role="load" graphic="button/load.png" enterimg="button/load2.png" x=260 y=610]
-
-;クイックセーブ
-[button name="role_button" role="quicksave" graphic="button/qsave.png" enterimg="button/qsave2.png" x=335 y=610]
-
-;クイックロード
-[button name="role_button" role="quickload" graphic="button/qload.png" enterimg="button/qload2.png" x=410 y=610]
-
-;バックログ
-[button name="role_button" role="backlog" graphic="button/log.png" enterimg="button/log2.png" x=485 y=610]
-
-;メッセージウィンドウ非表示
-[button name="role_button" role="window" graphic="button/close.png" enterimg="button/close2.png" x=560 y=610]
-
-;フルスクリーン切替
-[button name="role_button" role="fullscreen" graphic="button/screen.png" enterimg="button/screen2.png" x=635 y=610]
-
-;メニュー呼び出し（※ロールボタンを使うなら不要）
-[button name="role_button" role="menu" graphic="button/menu.png" enterimg="button/menu2.png" x=710 y=610]
-
-;コンフィグ（※sleepgame を使用して config.ks を呼び出しています）
-[button name="role_button" role="sleepgame" graphic="button/sleep.png" enterimg="button/sleep2.png" x=785 y=610 storage="config.ks"]
-
-;タイトルに戻る
-[button name="role_button" role="title" graphic="button/title.png" enterimg="button/title2.png" x=860 y=610]
-
-;;ロールボタン追加終わり
-
+[add_theme_button]
 
 こんな風にゲームに必要な機能を画面の上に持たせることも簡単にできるよ[p]
 これはロールボタンといって、ボタンに特別な機能を持たせる事ができます。[p]
@@ -370,11 +287,11 @@ AppStoreやGooglePlayに向けてアプリ化して販売することもでき�
 [anim name="akane" left=600 time=1000]
 
 ;リンクボタンを表示
-[glink text="ティラノビルダーの紹介" size=20 width=500 x=30 y=100 color=blue target=tyranobuilder ]
-[glink text="制作事例" size=20 width=500 x=30 y=160 color=blue target=example ]
-[glink text="応用テクニック" size=20 width=500 x=30 y=220 color=blue target=tech ]
-[glink text="役に立つ情報源" size=20 width=500 x=30 y=280 color=blue target=info ]
-[glink text="タグリファレンス" size=20 width=500 x=30 y=340 color=blue target=tagref ]
+[glink text="ティラノビルダーの紹介" size=20 width=500 x=30 y=100 color="theme_tyrano_02" target=tyranobuilder ]
+[glink text="制作事例" size=20 width=500 x=30 y=160 color="theme_tyrano_02" target=example ]
+[glink text="応用テクニック" size=20 width=500 x=30 y=220 color="theme_tyrano_02" target=tech ]
+[glink text="役に立つ情報源" size=20 width=500 x=30 y=280 color="theme_tyrano_02" target=info ]
+[glink text="タグリファレンス" size=20 width=500 x=30 y=340 color="theme_tyrano_02" target=tagref ]
 
 [s]
 
