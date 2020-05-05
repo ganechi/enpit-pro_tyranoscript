@@ -2,7 +2,6 @@
 [cm]
 
 @clearstack
-@bg storage ="enpit.jpg" time=1000
 @bg storage ="enpit_nu.jpg" time=1000
 
 ;タイトルスキップ

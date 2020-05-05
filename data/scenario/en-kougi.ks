@@ -42,7 +42,10 @@
 
 ;キャラクター登場
 [chara_show  name="akane" top="100"]
-[chara_show  name="fukutam" top="200" ]
+[chara_show  name="fukutam" top="200" wait="false"]
+
+
+
 #fukutam
 みなさん、こんにちは。[p]
 組み込みシステム研究センターのバーチャル研究員 ふくたむ です！[p]
@@ -53,36 +56,38 @@
 [chara_hide_all time=1000 wait=true]
 ;キャラクター登場
 [chara_show  name="slide" top="10" ]
-[chara_show  name="fukutam" top="200" left="15" ]
-[chara_show  name="akane" top="100" left="700"]
+[chara_show  name="fukutam" top="200" left="10" time="500" wait="false"]
+[chara_show  name="akane" top="100" left="700" time="500" wait="false"]
 
 #fukutam
 「オンライン講義受講の流れ」についてご説明します。[p]
 
-[chara_mod  name="slide" face="2" wait="true"]
+[chara_mod  name="slide" face="2" wait="true" time="2000"]
 
 #fukutam
-・・・・[p]
-[font color="red"]必ず、受講申込時に登録された名前（漢字）でZoomにログインしてください。[resetfont][p]
+はじめに・・・・[p]
+必ず、[font color="red"]受講申込時に登録された名前（漢字）[resetfont]でZoomにログインしてください。[p]
 
 
-[chara_mod  name="slide" face="3" wait="true"]
+[chara_mod  name="slide" face="3" wait="true" time="2000"]
 #fukutam
-・・・・[p]
+受講前日までの流れは・・・・[p]
 
 
-[chara_mod  name="slide" face="4" wait="true"]
+[chara_mod  name="slide" face="4" wait="true" time="2000"]
 #fukutam
-・・・・[p]
-
-#fukutam
-おしまい[p]
-
-;メッセージウィンドウの表示
-[layopt layer=message0 visible=false]
+受講当日の流れは・・・・[p]
 
 ;全員退場
 [chara_hide_all time=1000 wait=true]
 
-;一番最初のシナリオファイルへジャンプする
+;メッセージウィンドウの非表示
+[layopt layer=message0 visible=false]
+
+;エンディング
+@bg storage ="enpit_nu.jpg" time=2000
+@bg storage ="white.jpg" time=1000
+@wait time="1000"
+
+;タイトルへジャンプする
 @jump storage="title.ks"
