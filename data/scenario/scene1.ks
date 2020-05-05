@@ -7,7 +7,7 @@
 [start_keyconfig]
 
 
-[bg storage="NIC5F.jpg" time="1000"]
+[bg storage="NIC5F.jpg" time="500"]
 
 ;メニューボタンの表示
 @showmenubutton

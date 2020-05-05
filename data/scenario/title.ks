@@ -2,7 +2,8 @@
 [cm]
 
 @clearstack
-@bg storage ="enpit_bg.jpg" time=1000
+@bg storage ="enpit.jpg" time=1000
+@bg storage ="enpit_nu.jpg" time=1000
 
 ;タイトルスキップ
 [p]
@@ -23,8 +24,8 @@
 
 
 [glink  color="theme_tyrano_02" size="20"  x="300" y="580" width="100"  text="START"  target="*gamestart"  ]
-[glink  color="theme_tyrano_02" size="20"  x="520" y="580" width="100"  text="CONFIG" storage="../others/plugin/theme_tyrano_02/config.ks" role="sleepgame"  ]
-
+;[glink  color="theme_tyrano_02" size="20"  x="520" y="580" width="100"  text="CONFIG" storage="../others/plugin/theme_tyrano_02/config.ks" role="sleepgame"  ]
+;[glink color="theme_tyrano_02" size="20"  x="520" y="580" width="100" text="CONFIG" exp="if (TYRANO.kag.tmp.sleep_game != null) {return false;}TYRANO.kag.ftag.startTag("sleepgame", {storage:"../others/plugin/theme_tyrano_02/config.ks"});"]
 
 [s]
 
