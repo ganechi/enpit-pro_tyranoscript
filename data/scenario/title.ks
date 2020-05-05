@@ -3,11 +3,7 @@
 
 @clearstack
 @bg storage ="enpit_nu.jpg" time=1000
-
-;タイトルスキップ
-[p]
-
-;@jump target="*gamestart"
+@wait time="1000"
 
 @bg storage ="NIC5F.jpg" time=1000
 @wait time = 500
