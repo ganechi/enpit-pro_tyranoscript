@@ -5,7 +5,7 @@
 @bg storage ="enpit_bg.jpg" time=1000
 
 ;タイトルスキップ
-[s]
+[p]
 
 ;@jump target="*gamestart"
 
