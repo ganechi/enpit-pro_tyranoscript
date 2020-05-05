@@ -22,9 +22,9 @@
 ;[button x=400 y=470 graphic="title/button_config.png" storage="../others/plugin/theme_tyrano_02/config.ks" role="sleepgame"]
 
 
-[glink  color="theme_tyrano_02" size="20"  x="80" y="550" width="100"  text="START"  target="*gamestart"  ]
-[glink  color="theme_tyrano_02" size="20"  x="300" y="550" width="100"  text="CONTINUE"  target="*load"  ]
-[glink  color="theme_tyrano_02" size="20"  x="520" y="550" width="100"  text="CONFIG" storage="../others/plugin/theme_tyrano_02/config.ks" role="sleepgame"  ]
+[glink  color="theme_tyrano_02" size="20"  x="80" y="580" width="100"  text="START"  target="*gamestart"  ]
+[glink  color="theme_tyrano_02" size="20"  x="300" y="580" width="100"  text="CONTINUE"  target="*load"  ]
+[glink  color="theme_tyrano_02" size="20"  x="520" y="580" width="100"  text="CONFIG" storage="../others/plugin/theme_tyrano_02/config.ks" role="sleepgame"  ]
 
 
 [s]
