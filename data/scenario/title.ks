@@ -14,12 +14,16 @@
 
 *start
 
+[layopt layer="1" visible="true"]
+@image layer="1" storage="enpit-pro-emb.png" x="40" y="300" height="40" time="500"
+@image layer="1" storage="nagoya-u.png" x="40" y="350" height="40" time="500"
+
 ;[button x=460 y=330 graphic="title/button_start.png" target="gamestart"]
 ;[button x=430 y=400 graphic="title/button_load.png"  role="load" ]
 ;[button x=100 y=390 graphic="title/button_cg.png" storage="cg.ks" ]
 ;[button x=100 y=460 graphic="title/button_replay.png" storage="replay.ks" ]
 ;[button x=100 y=390 graphic="title/button_config.png" role="sleepgame" storage="config.ks" ]
-[button x=400 y=470 graphic="title/button_config.png" storage="../others/plugin/theme_tyrano_02/config.ks" role="sleepgame"]
+[button x=900 y=580 width="40" graphic="title/setting.png" storage="../others/plugin/theme_tyrano_02/config.ks" role="sleepgame"]
 
 
 [glink  color="theme_tyrano_02" size="20"  x="400" y="200" width="400"  text="ティラノスクリプトについて"  target="*gamestart"  ]
@@ -32,9 +36,11 @@
 [s]
 
 *gamestart
+[freeimage layer="1"]
 ;一番最初のシナリオファイルへジャンプする
 @jump storage="scene1.ks"
 
 *enpit-pro-start
+[freeimage layer="1"]
 ;一番最初のシナリオファイルへジャンプする
 @jump storage="en-kougi.ks"
