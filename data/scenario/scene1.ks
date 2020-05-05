@@ -53,7 +53,7 @@ BGMを流しますか？[p]
 
 [cm]
 よし、再生するよ。[l]
-@playbgm time="3000" storage=music.ogg loop=true
+@playbgm time="3000" storage=dream.ogg loop=true
 徐々にフェードインしながら再生することもできるんだ[l][cm]
 
 @jump target="*common_bgm"
