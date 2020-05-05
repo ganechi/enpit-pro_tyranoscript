@@ -42,7 +42,7 @@
 
 ;キャラクター登場
 [chara_show  name="akane" top="100"]
-[chara_show  name="fukutam" top="200" wait="false"]
+[chara_show  name="fukutam" top="200"]
 
 
 
