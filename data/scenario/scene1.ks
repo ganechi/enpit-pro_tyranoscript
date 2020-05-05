@@ -41,6 +41,8 @@
 ;yamato
 [chara_new  name="yamato"  storage="chara/yamato/normal.png" jname="やまと" ]
 
+;fukutam
+[chara_new  name="fukutam"  storage="chara/fukutam/normal.png"  width="300" height="550" jname="ふくたむ"]
 
 #
 BGMを流しますか？[p]
@@ -327,19 +329,20 @@ AppStoreやGooglePlayに向けてアプリ化して販売することもでき�
 
 #あかね
 ここらで、別のキャラクターに登場してもらいましょうか[l][cm]
-やまとー[p]
-[chara_show name="yamato"]
+[chara_show name="fukutam"]
 
 こんな風に。簡単です。[l][r]
 キャラクターは何人でも登場させることができるから、試してみてね。[p]
+[chara_show name="yamato"]
 
-#yamato
-おい、俺もう、帰っていいかな？[l][cm]
+#fukutam
+帰りますね〜[l][cm]
 
 #akane
-あ、ごめんごめん。ありがとう[l][cm]
+ありがとう！[l][cm]
 
 [chara_hide name="yamato"]
+[chara_hide name="fukutam"]
 
 #akane
 これでティラノスクリプトの基本機能の説明は終わりだけど[p]
