@@ -14,7 +14,7 @@
 @bg storage ="white.jpg" time=1000
 ;デフォルトは前景レイヤは配置されますので表示状態にしておく 画面サイズ:960*640
 [layopt layer=0 visible=true]
-[mtext text="オンライン講義受講のながれ" size="55" x=0 y=250 width="960" align="center" in_effect="fadeIn" out_effect="fadeOut" time="1000" bold="bold"]
+[mtext text="オンライン講義受講の流れ" size="55" x=0 y=250 width="960" align="center" in_effect="fadeIn" out_effect="fadeOut" time="1000" bold="bold"]
 
 @bg storage="NIC5F.jpg" time="100"
 
@@ -41,7 +41,7 @@
 
 
 ;キャラクター登場
-[chara_show  name="akane" top="100"]
+[chara_show  name="akane" top="100" ]
 [chara_show  name="fukutam" top="200"]
 
 

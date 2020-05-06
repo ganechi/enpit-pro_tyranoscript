@@ -6,7 +6,7 @@
 @wait time="1000"
 
 @bg storage ="NIC5F.jpg" time=1000
-@wait time = 500
+@wait time = "500"
 
 *start
 
